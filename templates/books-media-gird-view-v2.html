@@ -109,7 +109,7 @@
                                         <div class="book-list-icon blue-icon"></div>
                                         <figure>
                                             {% if book.images.all %}
-                                            <a href="books-media-detail-v2.html"><img src="{{ book.images.first.book_image.url }}" alt="Book"></a>
+                                            <a href="{% url 'det' book.id %}"><img src="{{ book.images.first.book_image.url }}" alt="Book"></a>
                                             {% endif %}
                                             <figcaption>
                                                 <header>
