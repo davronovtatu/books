@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Book
+from django.contrib.auth.decorators import login_required
+
 
 def HomeView(request):
     return render(request,"index.html")
@@ -10,7 +12,7 @@ def ContactView(request):
     return render(request,"contact.html")
 
 
-
+@login_required()
 def BookListView(request):
     books=Book.objects.all()
     context={
